@@ -1,17 +1,30 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for (let i = 0; i < array.length; i++) {
+    const complement = target - array[i];
+    for (let t = i + 1; t < array.length; t++) {
+      if (array[t] === complement) return true;
+    }
+  }
+  return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
+  runtime O(n)
+  space O(n)
 */
 
 /* 
-  Add your pseudocode here
+  if array[2,3,4,5],8]
+  2+3,2+4,2+5
+  3+4,3+5
+  4+5
+  if any pair sum up to 8 return true else false
 */
 
 /*
-  Add written explanation of your solution here
+  a function that pairs up numbers add them randomly until it finds the one that add up to the target
+  and return true if any but return false if no pair add upto target
 */
 
 // You can run `node index.js` to view these console logs
